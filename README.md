@@ -17,3 +17,6 @@ a game about a console made in godot inspired by [`voices of the void`](https://
 ### some other plans
 - everything to be done via the console
 - settings (audio, visual customization)
+
+### showcase video
+- [`youtube link`](https://youtu.be/vuv15g7Qay0)
