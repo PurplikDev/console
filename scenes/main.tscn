@@ -53,6 +53,7 @@ description = "lists all available commands in a module"
 
 [node name="cl" type="Node" parent="Console"]
 script = ExtResource("3_3qq3i")
+description = "module is work in progress"
 
 [node name="help" type="Node" parent="Console"]
 script = ExtResource("3_3qq3i")
