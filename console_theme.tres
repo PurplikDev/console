@@ -1,0 +1,81 @@
+[gd_resource type="Theme" load_steps=13 format=3 uid="uid://bq613joys0ov3"]
+
+[sub_resource type="SystemFont" id="SystemFont_f2ox4"]
+font_names = PackedStringArray("OCR A")
+oversampling = 10.0
+
+[sub_resource type="SystemFont" id="SystemFont_3r44o"]
+font_names = PackedStringArray("OCR A")
+oversampling = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aeied"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 0.196078)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqvn1"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 0.196078)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtfa6"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0, 0, 0, 0.196078)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="SystemFont" id="SystemFont_ytw36"]
+font_names = PackedStringArray("OCR A")
+oversampling = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0no3"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_06nom"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_80den"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qj1kv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2abae"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wqekp"]
+
+[resource]
+Label/fonts/font = SubResource("SystemFont_f2ox4")
+LineEdit/fonts/font = SubResource("SystemFont_3r44o")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_aeied")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_yqvn1")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_xtfa6")
+RichTextLabel/fonts/normal_font = SubResource("SystemFont_ytw36")
+RichTextLabel/styles/normal = SubResource("StyleBoxFlat_d0no3")
+VScrollBar/styles/grabber = SubResource("StyleBoxEmpty_06nom")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxEmpty_80den")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxEmpty_qj1kv")
+VScrollBar/styles/scroll = SubResource("StyleBoxEmpty_2abae")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxEmpty_wqekp")

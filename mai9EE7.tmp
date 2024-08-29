@@ -1,0 +1,110 @@
+[gd_scene load_steps=15 format=3 uid="uid://ppsr6p7t1vag"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_85v2j"]
+[ext_resource type="Theme" uid="uid://bq613joys0ov3" path="res://console_theme.tres" id="1_ct2bq"]
+[ext_resource type="Script" path="res://console.gd" id="1_e3r12"]
+[ext_resource type="Shader" uid="uid://dlv5yftfj7ked" path="res://noise.tres" id="1_ytkut"]
+[ext_resource type="Texture2D" uid="uid://di5sk68wqkb01" path="res://noise_texture.tres" id="2_hrn53"]
+[ext_resource type="Script" path="res://noise_randomizer.gd" id="2_wyvv8"]
+[ext_resource type="Script" path="res://module.gd" id="3_hmuxd"]
+[ext_resource type="Shader" path="res://crt.gdshader" id="4_82mpa"]
+[ext_resource type="Script" path="res://console_input.gd" id="4_gjsjx"]
+[ext_resource type="Texture2D" uid="uid://bechnlsdrgcbn" path="res://icon.svg" id="5_0c337"]
+[ext_resource type="AudioStream" uid="uid://day14c7ixpjjx" path="res://sounds/console_click.mp3" id="10_tfok2"]
+[ext_resource type="AudioStream" uid="uid://8st7pgq0d066" path="res://sounds/console_submit.mp3" id="11_ly5ky"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_15f4p"]
+shader = ExtResource("1_ytkut")
+shader_parameter/noise = ExtResource("2_hrn53")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o0vpu"]
+shader = ExtResource("4_82mpa")
+shader_parameter/scanline_count = 10.0
+
+[node name="Main" type="Node"]
+script = ExtResource("1_85v2j")
+
+[node name="Console" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_e3r12")
+
+[node name="sv" type="Node" parent="Console"]
+script = ExtResource("3_hmuxd")
+description = "this is a server module"
+
+[node name="Node" type="Node" parent="Console/sv"]
+
+[node name="cl" type="Node" parent="Console"]
+script = ExtResource("3_hmuxd")
+
+[node name="kill_yourself" type="Node" parent="Console"]
+script = ExtResource("3_hmuxd")
+description = "no you bitchass"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ct2bq")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+material = SubResource("ShaderMaterial_15f4p")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -23.0
+offset_top = -13.0
+offset_right = 23.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05, 0.05, 0.05, 1)
+
+[node name="ConsoleOutput" type="RichTextLabel" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 849.0
+offset_bottom = 440.0
+scroll_following = true
+
+[node name="ConsoleInput" type="LineEdit" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -36.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("4_gjsjx")
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+material = SubResource("ShaderMaterial_o0vpu")
+layout_mode = 0
+offset_right = 854.0
+offset_bottom = 480.0
+texture = ExtResource("5_0c337")
+
+[node name="NoiseRandomizer" type="Node" parent="."]
+script = ExtResource("2_wyvv8")
+noise = ExtResource("2_hrn53")
+
+[node name="ConsoleKeyAudio" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("10_tfok2")
+volume_db = -2.5
+
+[node name="ConsoleInputAudio" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("11_ly5ky")
+volume_db = -2.5
