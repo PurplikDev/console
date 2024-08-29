@@ -62,6 +62,23 @@ special_command = true
 
 [node name="-Special Commands-" type="Node" parent="Console"]
 
+[node name="yippee" type="Node" parent="Console"]
+script = ExtResource("3_3qq3i")
+description = "⣜⠉⢒⣲⠤⠤⠤⠤⠤⠄⢤⣐⠒⢹⠀⠀⠀⠀
+⣧⠖⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⢦⡸⠀⠀⠀
+⡏⠀⢀⡶⣲⣶⡄⠀⢠⡖⣲⣦⠀⠀⠇⢀⠤⡀
+⡃⠀⠈⠛⠿⠟⠁⠀⠈⠛⠛⠛⠀⠀⡅⡾⠀⡃
+⢈⡢⢄⡀⠀⠀⠀⠉⠉⠀⢀⣀⣴⣊⣰⠃⢸⠀
+⠋⢠⠊⠈⢹⠉⠉⠉⠉⠀⠀⠀⠀⠀⠘⡖⠁⠀
+⠀⠀⠀⠀⠀⡇⠀⠀⡄⠀⠀⡒⢲⡆⠀⢨⠀⠀
+⠀⠀⠀⠀⠀⠘⠤⠔⠑⠤⠜⠊⠀⠑⠊⠀⠀⠀"
+special_command = true
+
+[node name="ok computer" type="Node" parent="Console"]
+script = ExtResource("3_3qq3i")
+description = "OK Computer is the third studio album by the English rock band Radiohead, released on 21 May 1997. With their producer, Nigel Godrich, Radiohead recorded most of OK Computer in their rehearsal space in Oxfordshire and the historic mansion of St Catherine's Court in Bath in 1996 and early 1997. They distanced themselves from the guitar-centred, lyrically introspective style of their previous album, The Bends. OK Computer's abstract lyrics, densely layered sound and eclectic influences laid the groundwork for Radiohead's later, more experimental work."
+special_command = true
+
 [node name="kill yourself" type="Node" parent="Console"]
 script = ExtResource("3_3qq3i")
 description = "no you bitchass"
@@ -78,23 +95,6 @@ special_command = true
 [node name="amongus" type="Node" parent="Console"]
 script = ExtResource("3_3qq3i")
 description = "shut the fuck up"
-special_command = true
-
-[node name="ok computer" type="Node" parent="Console"]
-script = ExtResource("3_3qq3i")
-description = "OK Computer is the third studio album by the English rock band Radiohead, released on 21 May 1997. With their producer, Nigel Godrich, Radiohead recorded most of OK Computer in their rehearsal space in Oxfordshire and the historic mansion of St Catherine's Court in Bath in 1996 and early 1997. They distanced themselves from the guitar-centred, lyrically introspective style of their previous album, The Bends. OK Computer's abstract lyrics, densely layered sound and eclectic influences laid the groundwork for Radiohead's later, more experimental work."
-special_command = true
-
-[node name="yippee" type="Node" parent="Console"]
-script = ExtResource("3_3qq3i")
-description = "⣜⠉⢒⣲⠤⠤⠤⠤⠤⠄⢤⣐⠒⢹⠀⠀⠀⠀
-⣧⠖⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⢦⡸⠀⠀⠀
-⡏⠀⢀⡶⣲⣶⡄⠀⢠⡖⣲⣦⠀⠀⠇⢀⠤⡀
-⡃⠀⠈⠛⠿⠟⠁⠀⠈⠛⠛⠛⠀⠀⡅⡾⠀⡃
-⢈⡢⢄⡀⠀⠀⠀⠉⠉⠀⢀⣀⣴⣊⣰⠃⢸⠀
-⠋⢠⠊⠈⢹⠉⠉⠉⠉⠀⠀⠀⠀⠀⠘⡖⠁⠀
-⠀⠀⠀⠀⠀⡇⠀⠀⡄⠀⠀⡒⢲⡆⠀⢨⠀⠀
-⠀⠀⠀⠀⠀⠘⠤⠔⠑⠤⠜⠊⠀⠑⠊⠀⠀⠀"
 special_command = true
 
 [node name="ConsoleInterface" type="Control" parent="."]
