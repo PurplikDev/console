@@ -1,73 +1,73 @@
 [gd_scene load_steps=18 format=3 uid="uid://ppsr6p7t1vag"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_85v2j"]
-[ext_resource type="Theme" uid="uid://bq613joys0ov3" path="res://console_theme.tres" id="1_ct2bq"]
-[ext_resource type="Script" path="res://console.gd" id="1_e3r12"]
-[ext_resource type="Shader" uid="uid://dlv5yftfj7ked" path="res://noise.tres" id="1_ytkut"]
-[ext_resource type="Texture2D" uid="uid://di5sk68wqkb01" path="res://noise_texture.tres" id="2_hrn53"]
-[ext_resource type="Script" path="res://noise_randomizer.gd" id="2_wyvv8"]
-[ext_resource type="Script" path="res://module.gd" id="3_hmuxd"]
-[ext_resource type="Shader" path="res://crt.gdshader" id="4_82mpa"]
-[ext_resource type="Script" path="res://console_input.gd" id="4_gjsjx"]
-[ext_resource type="Script" path="res://commands/command.gd" id="4_ols50"]
-[ext_resource type="Texture2D" uid="uid://bechnlsdrgcbn" path="res://icon.svg" id="5_0c337"]
-[ext_resource type="Script" path="res://commands/list_command.gd" id="5_6a3n5"]
-[ext_resource type="AudioStream" uid="uid://day14c7ixpjjx" path="res://sounds/console_click.mp3" id="10_tfok2"]
-[ext_resource type="AudioStream" uid="uid://8st7pgq0d066" path="res://sounds/console_submit.mp3" id="11_ly5ky"]
-[ext_resource type="AudioStream" uid="uid://b2wpj6bygog8g" path="res://sounds/console_beep_2.mp3" id="15_w7qdv"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_xm8a4"]
+[ext_resource type="Script" path="res://scripts/console.gd" id="2_5gp88"]
+[ext_resource type="Script" path="res://scripts/module.gd" id="3_3qq3i"]
+[ext_resource type="Script" path="res://scripts/commands/command.gd" id="4_w5ofe"]
+[ext_resource type="Script" path="res://scripts/commands/list_command.gd" id="5_byfkx"]
+[ext_resource type="Theme" uid="uid://bq613joys0ov3" path="res://resources/console_theme.tres" id="6_41256"]
+[ext_resource type="Shader" uid="uid://dlv5yftfj7ked" path="res://resources/noise.tres" id="7_51p10"]
+[ext_resource type="Texture2D" uid="uid://di5sk68wqkb01" path="res://resources/noise_texture.tres" id="8_4s8l8"]
+[ext_resource type="Script" path="res://scripts/console_input.gd" id="9_21e0p"]
+[ext_resource type="Shader" path="res://resources/crt.gdshader" id="10_1y624"]
+[ext_resource type="Texture2D" uid="uid://bechnlsdrgcbn" path="res://resources/icon.svg" id="11_5cnrr"]
+[ext_resource type="Script" path="res://scripts/noise_randomizer.gd" id="12_opo8a"]
+[ext_resource type="AudioStream" uid="uid://day14c7ixpjjx" path="res://resources/sounds/console_click.mp3" id="13_dfvyu"]
+[ext_resource type="AudioStream" uid="uid://8st7pgq0d066" path="res://resources/sounds/console_submit.mp3" id="14_tv7pw"]
+[ext_resource type="AudioStream" uid="uid://b2wpj6bygog8g" path="res://resources/sounds/console_beep_2.mp3" id="15_2nytx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_15f4p"]
-shader = ExtResource("1_ytkut")
-shader_parameter/noise = ExtResource("2_hrn53")
+shader = ExtResource("7_51p10")
+shader_parameter/noise = ExtResource("8_4s8l8")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o0vpu"]
-shader = ExtResource("4_82mpa")
+shader = ExtResource("10_1y624")
 shader_parameter/scanline_count = 10.0
 
 [node name="Main" type="Node"]
-script = ExtResource("1_85v2j")
+script = ExtResource("1_xm8a4")
 
 [node name="Console" type="Node" parent="."]
 unique_name_in_owner = true
-script = ExtResource("1_e3r12")
+script = ExtResource("2_5gp88")
 
 [node name="sv" type="Node" parent="Console"]
-script = ExtResource("3_hmuxd")
+script = ExtResource("3_3qq3i")
 description = "this is a server module"
 
 [node name="ping" type="Node" parent="Console/sv"]
-script = ExtResource("4_ols50")
+script = ExtResource("4_w5ofe")
 description = "returns your current ping"
 
 [node name="reload" type="Node" parent="Console/sv"]
-script = ExtResource("4_ols50")
+script = ExtResource("4_w5ofe")
 description = "reloads your connection to the server"
 
 [node name="hash" type="Node" parent="Console/sv"]
-script = ExtResource("4_ols50")
+script = ExtResource("4_w5ofe")
 description = "return your server hash"
 
 [node name="list" type="Node" parent="Console/sv"]
-script = ExtResource("5_6a3n5")
+script = ExtResource("5_byfkx")
 description = "lists all available commands in a module"
 
 [node name="cl" type="Node" parent="Console"]
-script = ExtResource("3_hmuxd")
+script = ExtResource("3_3qq3i")
 
 [node name="help" type="Node" parent="Console"]
-script = ExtResource("3_hmuxd")
+script = ExtResource("3_3qq3i")
 description = "there is no help!"
 special_command = true
 
 [node name="-Special Commands-" type="Node" parent="Console"]
 
 [node name="kill yourself" type="Node" parent="Console"]
-script = ExtResource("3_hmuxd")
+script = ExtResource("3_3qq3i")
 description = "no you bitchass"
 special_command = true
 
 [node name="peepee poopoo" type="Node" parent="Console"]
-script = ExtResource("3_hmuxd")
+script = ExtResource("3_3qq3i")
 description = "...
 really funny
 reeeeeeeally funny
@@ -75,17 +75,17 @@ absolute comedy genius"
 special_command = true
 
 [node name="amongus" type="Node" parent="Console"]
-script = ExtResource("3_hmuxd")
+script = ExtResource("3_3qq3i")
 description = "shut the fuck up"
 special_command = true
 
 [node name="ok computer" type="Node" parent="Console"]
-script = ExtResource("3_hmuxd")
+script = ExtResource("3_3qq3i")
 description = "OK Computer is the third studio album by the English rock band Radiohead, released on 21 May 1997. With their producer, Nigel Godrich, Radiohead recorded most of OK Computer in their rehearsal space in Oxfordshire and the historic mansion of St Catherine's Court in Bath in 1996 and early 1997. They distanced themselves from the guitar-centred, lyrically introspective style of their previous album, The Bends. OK Computer's abstract lyrics, densely layered sound and eclectic influences laid the groundwork for Radiohead's later, more experimental work."
 special_command = true
 
 [node name="yippee" type="Node" parent="Console"]
-script = ExtResource("3_hmuxd")
+script = ExtResource("3_3qq3i")
 description = "⣜⠉⢒⣲⠤⠤⠤⠤⠤⠄⢤⣐⠒⢹⠀⠀⠀⠀
 ⣧⠖⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⢦⡸⠀⠀⠀
 ⡏⠀⢀⡶⣲⣶⡄⠀⢠⡖⣲⣦⠀⠀⠇⢀⠤⡀
@@ -103,7 +103,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_ct2bq")
+theme = ExtResource("6_41256")
 
 [node name="NoiseBackground" type="ColorRect" parent="ConsoleInterface"]
 material = SubResource("ShaderMaterial_15f4p")
@@ -141,32 +141,32 @@ offset_right = -5.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 0
-script = ExtResource("4_gjsjx")
+script = ExtResource("9_21e0p")
 
 [node name="CRT Effect" type="TextureRect" parent="ConsoleInterface"]
 material = SubResource("ShaderMaterial_o0vpu")
 layout_mode = 0
 offset_right = 854.0
 offset_bottom = 480.0
-texture = ExtResource("5_0c337")
+texture = ExtResource("11_5cnrr")
 
 [node name="NoiseRandomizer" type="Node" parent="ConsoleInterface"]
-script = ExtResource("2_wyvv8")
-noise = ExtResource("2_hrn53")
+script = ExtResource("12_opo8a")
+noise = ExtResource("8_4s8l8")
 
 [node name="ConsoleKeyAudio" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("10_tfok2")
+stream = ExtResource("13_dfvyu")
 volume_db = -2.5
 
 [node name="ConsoleInputAudio" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("11_ly5ky")
+stream = ExtResource("14_tv7pw")
 volume_db = -2.5
 
 [node name="ConsoleOutputAudio" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("15_w7qdv")
+stream = ExtResource("15_2nytx")
 volume_db = -2.5
 
 [node name="Timers" type="Node" parent="."]
