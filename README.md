@@ -10,13 +10,12 @@ a game about a console made in godot inspired by [`voices of the void`](https://
 	- connection "simulation"
 	- downloadable files
 	- more modules
-- settings
+- settings - text color, shader on/off, scan lines on/off/amount of, background noise, background color, audio
 - save files
 - "sandbox" mode
 
 ### some other plans
 - everything to be done via the console
-- settings (audio, visual customization)
 
 ### showcase video
 - [`youtube link`](https://youtu.be/vuv15g7Qay0)
