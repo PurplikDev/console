@@ -68,6 +68,7 @@ special_command = true
 
 [node name="text_color" type="Node" parent="Console/settings"]
 script = ExtResource("6_ckmmn")
+description = null
 
 [node name="-Special Commands-" type="Node" parent="Console"]
 

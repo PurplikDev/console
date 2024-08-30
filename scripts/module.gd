@@ -17,7 +17,10 @@ func command(cmd: String):
 		Console.print_line(description)
 	else:
 		var new_cmd = cmd.erase(0, name.length() + 1)
-		if commands.has(new_cmd):
-			commands[new_cmd].call_command()
+		var args = new_cmd.split(" ")
+		if commands.has(args[0]):
+			var command = commands[args[0]] as Command
+			args.remove_at(0)
+			command.call_command(args)
 		else:
 			Console.print_error("invalid command", new_cmd)
