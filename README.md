@@ -4,6 +4,7 @@ a game about a console made in godot inspired by [`voices of the void`](https://
 ### current features
 - dynamic modules and commands
 - cool looking console :3
+- changing text color in the console
 
 ### to do
 - content - actual content for the game, like a gameplay loop or a story or something
